@@ -86,11 +86,37 @@ body {
 .badge-ora-small{ background:rgba(76,175,80,.2); color:var(--accent-green); padding:3px 8px; border-radius:10px; font-size:11px; margin-left:5px; }
 
 /* Hero */
-.hero{
-  min-height:calc(var(--vh) * 100);
-  display:flex; align-items:center; justify-content:center; padding:60px 20px;
-  background:linear-gradient(180deg, var(--bg-dark) 0%, #2a2a2a 100%);
-  padding-top:calc(60px + env(safe-area-inset-top));
+.hero {
+  position: relative;
+  min-height: 100vh; /* oppure puoi mantenere calc(var(--vh) * 100) se vuoi */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 60px 20px;
+}
+
+.hero picture img {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.6), rgba(0,0,0,0.3));
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
 }
 .hero-content{ text-align:center; max-width:900px; position:relative; margin:0 auto; }
 .sempre-aperti-hero{ display:inline-block; background:rgba(76,175,80,.2); border:1px solid var(--accent-green); color:var(--accent-green); padding:10px 25px; border-radius:25px; margin-bottom:40px; font-size:14px; font-weight:600; }
