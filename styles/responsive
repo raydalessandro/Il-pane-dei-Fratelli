@@ -1,0 +1,61 @@
+/* ==============================
+   responsive.css
+   Adattamenti per diversi schermi
+   ============================== */
+
+/* --- Piccoli dispositivi (max 480px) --- */
+@media (max-width: 480px) {
+  body {
+    font-size: 0.95rem;
+  }
+
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .nav-actions {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .products-grid {
+    grid-template-columns: 1fr; /* 1 prodotto per riga */
+  }
+}
+
+/* --- Tablet (da 768px in su) --- */
+@media (min-width: 768px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero .subtitle {
+    font-size: 1.3rem;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 prodotti per riga */
+  }
+}
+
+/* --- Desktop grande (da 1200px in su) --- */
+@media (min-width: 1200px) {
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .hero-content {
+    max-width: 60%;
+    margin: 0 auto;
+  }
+
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 prodotti per riga */
+  }
+}
